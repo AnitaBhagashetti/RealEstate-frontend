@@ -7,6 +7,8 @@ import Propertydetail from './Components/Forms/Propertydetail'
 import Basicinfo from './Components/Forms/Basicinfo';
 import Generalinfo from './Components/Forms/Generalinfo';
 import Locationinfo from './Components/Forms/Locationinfo';
+import  Search from './Components/Homepage/Dyanamicpart/Search';
+import Table from './Components/Homepage/Dyanamicpart/Table'
 
 function App() {
   return (
@@ -20,6 +22,9 @@ function App() {
           <Route path="Propertydetail" element={<Propertydetail/>} />
           <Route path="Generalinfo" element={<Generalinfo/>} />
           <Route path="Locationinfo" element={<Locationinfo/>} />
+          <Route path="Search" element={<Search/>} />
+          <Route path = "Table" element = {<Table/>} />
+          
 
           {/* 
           <Route path="contact" element={<h1></h1>} />
