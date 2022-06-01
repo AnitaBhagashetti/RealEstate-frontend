@@ -1,9 +1,14 @@
 import React from 'react'
 import {Link } from "react-router-dom";
+import Nav from '../Homepage/Dyanamicpart/Nav';
+import Staticpart from '../Homepage/Staticpart';
+
 
 function Generalinfo() {
   return (
     <div>
+        <Staticpart/>
+        <Nav/>
         <form>
         <div>
             <label>Name</label>

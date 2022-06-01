@@ -1,11 +1,21 @@
 import React from 'react'
 import {Link } from "react-router-dom";
+import Buttons from '../Buttons';
+import Nav from '../Homepage/Dyanamicpart/Nav';
+import Staticpart from '../Homepage/Staticpart';
 
 function Basicinfo() {
+   
   return (
-    <div>
+
+    <div className='basic-info'>
+        <Staticpart/>
+        <div className='basic-info-right'>
+        <Nav/>
+        <Buttons />
         <form>
-        <div>
+            <div className='basic-form main'>
+        <div className='basic-info-left'>
             <label>Property Type</label>
             <select>
                 <option Selected>Select Property Type</option>
@@ -15,8 +25,10 @@ function Basicinfo() {
             </select><br/>
             <label>Price</label>
             <input type="number"></input>
+            <br />
             <label>Property Age</label>
             <select>
+            
                 <option Selected>Select Property Age</option>
                 <option value="1">Less than 1 Year</option>
                 <option value="2">Less than 5 Year</option>
@@ -25,7 +37,7 @@ function Basicinfo() {
             <label>Property Description</label>
             <input type="text"></input>
         </div>
-        <div>
+        <div className='basic-info-right'>
             <label>Negotiable</label>
             <select>
                 <option Selected>Select Negotiable</option>
@@ -51,10 +63,11 @@ function Basicinfo() {
                 <option value="2">No</option>
             </select>
         </div>
+        </div>
         <Link to="/Homepage">Cancel</Link>
         <button><Link to="/Propertydetail">Submit & Continue</Link></button>
         </form>
-        
+        </div>
         
     </div>
   )

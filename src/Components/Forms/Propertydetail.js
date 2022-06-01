@@ -1,9 +1,15 @@
 import React from 'react'
 import {Link } from "react-router-dom";
+import Nav from '../Homepage/Dyanamicpart/Nav';
+import Staticpart from '../Homepage/Staticpart';
+
 
 function Propertydetail() {
   return (
-    <div>
+    <div className='props'>
+        <Staticpart/>
+        <div>
+        <Nav/>
         <form>
         <div>
             <label>Length</label>
@@ -80,6 +86,7 @@ function Propertydetail() {
         <Link to="/Basicinfo">Previous</Link>
         <button><Link to="/Generalinfo">Submit & Continue</Link></button>
         </form>
+        </div>
     </div>
   )
 }
