@@ -1,0 +1,89 @@
+
+
+
+
+.bhk{
+    width:315px;
+    height: 40px;
+    background-color: aliceblue;
+    border-radius: 10px;
+}
+.attached{
+    width:315px;
+    height: 40px;
+    background-color: aliceblue;
+    border-radius: 10px;
+}
+.furnished{
+    width:315px;
+    height: 40px;
+    background-color: aliceblue;
+    border-radius: 10px;
+}
+.lift{
+    width:315px;
+    height: 40px;
+    background-color: aliceblue;
+    border-radius: 10px;
+}
+.fac{
+    width:315px;
+    height: 40px;
+    background-color: aliceblue;
+    border-radius: 10px;
+}
+.unit{
+    width:315px;
+    height: 40px;
+    background-color: aliceblue;
+    border-radius: 10px;
+}
+.noof{
+    width:315px;
+    height: 40px;
+    background-color: aliceblue;
+    border-radius: 10px;
+}
+.western{
+    width:315px;
+    height: 40px;
+    background-color: aliceblue;
+    border-radius: 10px;
+}
+.carparking{
+    width:315px;
+    height: 40px;
+    background-color: aliceblue;
+    border-radius: 10px;
+}
+.genera{
+    background-color: blue;
+    height:45px;
+    width:125px;
+    border-radius: 20px;
+    margin-bottom: 35px;
+}
+.container1{
+
+    margin: 10px;
+    padding: 10px;
+}
+.sub-container{
+    height: 500px;
+    width: 500px;
+    margin-left: 500px;
+    margin-top: 150px;
+    display: flex;
+    flex-direction: row;
+}
+.pav{
+    padding-top: 20px;
+    padding-left: 800px;
+}
+.prevvv{
+    height:45px;
+    width:125px;
+    background-color: aqua;
+    border-radius: 20px;
+    margin-bottom: 35px;
+}
