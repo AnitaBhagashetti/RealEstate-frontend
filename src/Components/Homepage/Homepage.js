@@ -8,7 +8,7 @@ export default function Homepage() {
     <div className='homepage'>
       <Staticpart/>
       <Dynamicpart/>
-      
-    </div>
+      </div>
+   
   )
 }

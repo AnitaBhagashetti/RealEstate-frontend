@@ -6,9 +6,9 @@ export default function Buttons() {
     <div className='buttons-main'>
         <h3 className='button-head'>ADD NEW PROPERTY</h3>
         <div className='buttons'>
-            <div className='button'>
-                <Number num={1}/>
-                <p className='button-name'>Basic info</p>
+            <div className='button' >
+                <Number num={1} />
+                <p className='button-name'> Basic info</p>
                 
             </div >
             <div className='button'>
