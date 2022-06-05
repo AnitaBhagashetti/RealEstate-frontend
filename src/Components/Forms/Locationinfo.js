@@ -1,4 +1,5 @@
 import React, { useRef } from 'react'
+import { useNavigate } from "react-router-dom";
 import {Link } from "react-router-dom";
 import "./Locationinfo.css";
 import Staticpart from '../Homepage/Staticpart';
@@ -13,6 +14,7 @@ import Homepage from '../Homepage/Homepage';
 
 function Locationinfo() {
     const [file1,Setfile] = useContext(fileStorage)
+    const navigate = useNavigate()
     // const [poststatus,Setpoststatus] = useState(false)
     const Statuspost = useRef(false)
     var allData = {
@@ -69,14 +71,15 @@ function Locationinfo() {
     
 
         await axios.post("http://localhost:8080/userData",localdata)
+    navigate("Frontend/RealEstate-frontend/src/Components/Homepage/Homepage.js", { replace: true });
         Info1()
     }
     async function Info1(){
         const Generalinfo = new FormData();
-        Generalinfo.append("Name", localStorage.getItem("Name"));
+        Generalinfo.append("propertyType", localStorage.getItem("propertyType"));
         Generalinfo.append("Mobile", localStorage.getItem("Mobile"));
-        Generalinfo.append("Postedby", localStorage.getItem("Postedby"));
-        Generalinfo.append("SelectType", localStorage.getItem("SelectType"));
+       
+      
         Generalinfo.append("Featuredpackage",localStorage.getItem("Featuredpackage")); 
         Generalinfo.append("PPDPackage",localStorage.getItem("PPDPackage"));
         Generalinfo.append("Image",file1);
@@ -88,9 +91,10 @@ function Locationinfo() {
             }
         })
         localStorage.clear()
-       Statuspost.current = false
-        alert(Statuspost)
-        console.log(Statuspost)
+    //    Statuspost.current = false
+    //     alert(Statuspost)
+    //     console.log(Statuspost)
+   
        
     }
     catch(e){
@@ -101,7 +105,8 @@ function Locationinfo() {
 
 
   return (
-      <div>{false?<Homepage/>:
+      
+         
 <div class="main-container">
         <Staticpart />
         <form>
@@ -152,7 +157,7 @@ function Locationinfo() {
         </form>
         
 </div>
-}</div>)
+)
 }
 
 export default Locationinfo
