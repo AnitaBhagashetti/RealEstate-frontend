@@ -1,8 +1,11 @@
 .container {
-    background-color: antiquewhite;
+    background-color: #FFFFFF;
     height: 8vh;
     display: grid;
     margin-left: 50px;
+    margin-top: 50px;
     grid-template-columns: repeat(9, 1fr);
     border-radius: 5px;
+    color:  #284E91;
+    ;
   }
