@@ -5,56 +5,65 @@
 html,body,#id,.App{
   width: 100%;
   height: 100%;
-  background-color:rgb(216, 248, 237);
+  background-color: rgb(216, 248, 237);
 }
 .login-main {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 16% 32% 10% 34%;
+  margin: 9% 32% 10% 34%;
 }
 .login {
   border: none;
   background: white;
   border-radius: 8px;
   text-align: center;
+  height: 100%;
+  padding: 15% 5%;
 }
 p.login-logo {
   font-size: 2rem;
-  font-weight: 600;
-  /* padding: 1rem 0; */
+  font-weight: 500;
+  color: #0E0E90;
+  padding-bottom: -9%;
+  position: relative;
+  bottom: 30px;
 }
 p.login-text {
   padding: 10px 25px;
   font-size: 1rem;
   font-weight: 500;
+  position: relative;
+  bottom: 33px;
 }
-
 form.login-form {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
+  /* bottom: 9px; */
 }
 input {
   padding: 7px 78px;
   margin: 1.7% 0;
-  border: 1px solid black;
+  border: 0.1px solid black;
   border-radius: 5px;
   font-size: 15px;
   font-weight: 1rem;
 }
-a.sign-in-button {
-  text-decoration: none;
-  border: 1px solid black;
-  background: #141482;
+button.sign-in-button {
+  background: #4C57B6;
   color: white;
-  padding: 7px 134px;
-  margin: 5% 1px;
-  border-radius: 5px;
+  text-align: center;
+  padding: 8px 143px;
+  margin: 7% 0;
+  border-radius: 7px;
 }
-
+a.sign-up-button {
+  color: blue;
+}
 .register-form {
   display: flex;
   flex-direction: column;
@@ -64,6 +73,10 @@ a.sign-in-button {
 .register {
   display: flex;
   flex-direction: column;
+  margin: 10% 35% 0 32%;
+  background: white;
+  border-radius: 10px;
+  padding: 4% 1%;
 }
 form.form-register {
   display: flex;
@@ -80,21 +93,22 @@ form.form-register {
 }
 button.sign-up-button {
   margin: 3%;
-  padding: 7px 133px;
-  background: #0a0a67;
+  padding: 7px 142px;
+  background: #4C57B6;
   border-radius: 6px;
   color: white;
   cursor: pointer;
   font-size: 15px;
   font-weight: 600;
 }
-
 .homepage {
   width: 100%;
   height: 100%;
   display: flex;
   background-color: white;
-
+}
+a.sign-in-link {
+  color: blue;
 }
 .homepage-static {
   background-color: rgb(216, 248, 237);
@@ -102,7 +116,6 @@ button.sign-up-button {
   margin-left: 5px;
   width: 17%;
 }
-
 p.static-logo {
   text-align: center;
   font-size: 2rem;
@@ -115,12 +128,10 @@ p.static-logo {
   font-weight: 600;
   cursor: pointer;
 }
-
 i{
   margin-right: 2px;
   cursor: pointer;
 }
-
 .dynamicpart {
   width: 79%;
 }
@@ -129,7 +140,6 @@ i{
   display: flex;
   justify-content: space-between;
 }
-
 p.nav-userid-text {
   margin: 11px 0 0 13px;
   font-size: 1rem;
@@ -157,7 +167,6 @@ i.fa-solid.fa-caret-down {
   border-radius: 24px;
   background: white;
 }
-
 input.search-input {
   border: none;
   margin-left: 6px;
@@ -167,7 +176,7 @@ i.fa-solid.fa-magnifying-glass {
 }
 a.add-button {
   border: 1px solid black;
-  background: #2d2dc2;
+  background: #2D2DC2;
   border-radius: 24px;
   color: white;
   padding: 1% 2%;
@@ -188,7 +197,6 @@ a.add-button {
   margin-top: 3%;
   margin-bottom: 5%;
 }
-
 h3.button-head {
   padding-left: 6%;
   padding-bottom: 2%;
@@ -205,7 +213,7 @@ h3.button-head {
   border-radius: 4rem;
 }
 .number {
-  background: #81c6dc;
+  background: #81C6DC;
   border-radius: 50%;
   width: 27px;
   text-align: center;
@@ -217,3 +225,16 @@ h3.button-head {
   justify-content: space-evenly;
   width: 100%;
 }
+/* .user-name{
+  margin-top: 10px;
+} */
+.down-arrow{
+  margin-top: 10px;
+  height: 10px;
+}
+
+
+
+
+
+

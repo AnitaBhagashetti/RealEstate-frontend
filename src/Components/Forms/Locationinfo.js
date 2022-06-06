@@ -17,15 +17,16 @@ function Locationinfo() {
     // const [poststatus,Setpoststatus] = useState(false)
     const navigate = useNavigate();
     const Statuspost = useRef(false)
-        const date = new Date()
-        const PPDID ="PPDID" +date.getSeconds()+date.getHours() +date.getDay()
-        console.log(PPDID)
-    var allData = {
+   
+var allData = {
 
     Basicinfo:{
         propertyType:localStorage.getItem("propertyType"),
         Mobile:localStorage.getItem("Mobile"),
         TotalArea:localStorage.getItem("TotalArea") ,
+        PPDID:localStorage.getItem("PPDID"),
+        //token:localStorage.getItem("token")
+
         // PropertyAge:localStorage.getItem("PropertyAge") ,
         // PropertyApproved:localStorage.getItem("PropertyApproved") ,
         // Propertydescription:localStorage.getItem("Propertydescription") ,

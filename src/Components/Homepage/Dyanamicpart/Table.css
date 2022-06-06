@@ -1,11 +1,37 @@
-.container {
-    background-color: #FFFFFF;
-    height: 8vh;
-    display: grid;
-    margin-left: 50px;
-    margin-top: 50px;
-    grid-template-columns: repeat(9, 1fr);
-    border-radius: 5px;
-    color:  #284E91;
-    ;
-  }
+table {
+  border-collapse: collapse;
+  margin: 13px;
+  width: 1201px;
+  height: 65px;
+}
+
+th,
+td {
+  background-color: #FFFFFF;
+  Color: white;
+}
+
+th {
+  width: 150px;
+  color: #284E91;
+  /* padding: 5px; */
+  height: 25px;
+  margin-top: 255px;
+  text-align: center;
+}
+
+td {
+  width: 150px;
+  color: #1F1F1F;
+  padding: 5px;
+  margin-bottom: 5px;
+  text-align: center;
+  margin-left: 5px;
+}
+
+.gfg {
+  border-collapse: separate;
+  border-spacing: 0 10px;
+  background-color:#FFFFFF;
+  margin-top: 5px;
+}
