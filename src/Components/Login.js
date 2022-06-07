@@ -8,6 +8,7 @@ export default function Login() {
         password:""
     })
     const navigate = useNavigate();
+
     function handleChange(e){
         setValues((prevstate)=>{
             return{
@@ -18,6 +19,7 @@ export default function Login() {
     }
 async function handleClick(e){
     e.preventDefault();
+
     try {
         console.log(values)
         await axios.post('http://localhost:8080/login',{
@@ -42,6 +44,39 @@ async function handleClick(e){
         console.log(error)
     }
 }
+
+    
+    try {
+        console.log(values)
+        await axios.post('http://localhost:8000/login',{
+            userId:values.userId,
+            password:values.password
+          }).then((res)=>{
+              if(res.data.status==="Success"){
+                localStorage.setItem('token', res.data.token)
+                alert("Logged in successfully")
+                navigate("/Homepage");
+                
+              }
+              else{
+                  alert(res.data.status)
+                  
+              }
+          }
+          
+          
+          )
+
+        //   navigate('http://localhost:3000/Homepage',{ replace: true })
+        
+        
+    } catch (error) {
+        console.log(error)
+        
+    }
+    
+}
+
   return (
     <div className='login-main'>
         <div className='login'>
@@ -52,12 +87,24 @@ async function handleClick(e){
         <input type="password" name="password" value={values.password} onChange={handleChange}></input>
                 <button className='sign-in-button' type='submit' >Sign in</button>
                 <Link to="/Register" className='sign-up-button'>Sign up</Link>
+
             </form>
+
+
+            </form>
+
         </div>
         <div className='login-register'>
             <span className='login-span-text'>Don't have account? </span>
             <Link to="/Register" className='sign-up-button'>Sign up</Link>
+
         </div>
+
+        
+
+        </div>
+       
+
     </div>
   )
 }

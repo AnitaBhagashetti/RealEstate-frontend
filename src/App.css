@@ -20,14 +20,24 @@ html,body,#id,.App{
   border-radius: 8px;
   text-align: center;
   height: 100%;
+
+
+ 
   padding: 15% 5%;
 }
 p.login-logo {
   font-size: 2rem;
   font-weight: 500;
+
   color: #0E0E90;
   padding-bottom: -9%;
+  position: relative
+  
+  color: #0e0e90;
+  padding-bottom: -9%;
   position: relative;
+ 
+
   bottom: 30px;
 }
 p.login-text {
@@ -106,6 +116,9 @@ button.sign-up-button {
   height: 100%;
   display: flex;
   background-color: white;
+}
+a.sign-in-link {
+  color: blue;
 }
 a.sign-in-link {
   color: blue;

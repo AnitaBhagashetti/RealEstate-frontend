@@ -15,6 +15,7 @@ export default function Nav() {
         <p>USERID:<span>06PPD125</span></p>
         <div className='nav-user'>
         <i class="fa-solid fa-user"></i>
+
         <p className='user-name'>UserName</p>
         <img
           className="down-arrow" src={down} alt="image"
@@ -25,6 +26,9 @@ export default function Nav() {
             }
           }}
         />
+
+        <p className='user-name'>User Name</p>
+
 
         </div>
 

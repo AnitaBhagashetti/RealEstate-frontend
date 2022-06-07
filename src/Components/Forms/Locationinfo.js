@@ -1,4 +1,5 @@
 import React, { useRef } from 'react'
+import { useNavigate } from "react-router-dom";
 import {Link } from "react-router-dom";
 import "./Locationinfo.css";
 import Staticpart from '../Homepage/Staticpart';
@@ -14,6 +15,7 @@ import Homepage from '../Homepage/Homepage';
 function Locationinfo() {
     
     const [file1,Setfile] = useContext(fileStorage)
+    const navigate = useNavigate()
     // const [poststatus,Setpoststatus] = useState(false)
     const navigate = useNavigate();
     const Statuspost = useRef(false)
@@ -74,6 +76,7 @@ var allData = {
     const postData =async ()=>{
     
 
+
         await axios.post("http://localhost:8080/userData",localdata).then(localStorage.clear())
         navigate("/Homepage")
 
@@ -102,6 +105,33 @@ var allData = {
 //     //     alert(Statuspost)
 //     //     console.log(Statuspost)
         
+
+        await axios.post("http://localhost:8080/userData",localdata)
+    navigate("Frontend/RealEstate-frontend/src/Components/Homepage/Homepage.js", { replace: true });
+        Info1()
+    }
+    async function Info1(){
+        const Generalinfo = new FormData();
+        Generalinfo.append("propertyType", localStorage.getItem("propertyType"));
+        Generalinfo.append("Mobile", localStorage.getItem("Mobile"));
+       
+      
+        Generalinfo.append("Featuredpackage",localStorage.getItem("Featuredpackage")); 
+        Generalinfo.append("PPDPackage",localStorage.getItem("PPDPackage"));
+        Generalinfo.append("Image",file1);
+        try{
+            await axios.post("http://localhost:8080/Generalinfo",Generalinfo,
+        {
+            headers: {
+              "Content-Type": "multip art/form-data",
+            }
+        })
+        localStorage.clear()
+    //    Statuspost.current = false
+    //     alert(Statuspost)
+    //     console.log(Statuspost)
+   
+
        
 //     }
 //     catch(e){
@@ -113,7 +143,12 @@ var allData = {
 
   return (
       
+
 <div class="main-container" >
+
+         
+<div class="main-container">
+
         <Staticpart />
         <form onSubmit={postData} action="/Homepage" >
             <Nav />

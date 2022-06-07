@@ -27,9 +27,7 @@ function App() {
           <Route path="Generalinfo" element={<Generalinfo/>} />
           <Route path="Locationinfo" element={<Locationinfo/>} />
 
-          {/* 
-          <Route path="contact" element={<h1></h1>} />
-          <Route path="*" element={<h1></h1>} /> */}
+          
         
       </Routes>
     </BrowserRouter>
