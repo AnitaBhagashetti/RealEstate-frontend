@@ -8,67 +8,103 @@ import Nav from '../Homepage/Dyanamicpart/Nav';
 import axios from  'axios'
 import {useContext,useState} from 'react'
 import {fileStorage} from '../../App'
-import {Navigate} from 'react-router-dom'
+import {Navigate,useNavigate} from 'react-router-dom'
 import Homepage from '../Homepage/Homepage';
 
 
 function Locationinfo() {
+    
     const [file1,Setfile] = useContext(fileStorage)
     const navigate = useNavigate()
     // const [poststatus,Setpoststatus] = useState(false)
+    const navigate = useNavigate();
     const Statuspost = useRef(false)
-    var allData = {
+   
+var allData = {
 
     Basicinfo:{
         propertyType:localStorage.getItem("propertyType"),
-        Negotable:localStorage.getItem("Negotable"),
-        Price:localStorage.getItem("Price") ,
-        OwnerShip:localStorage.getItem("OwnerShip") ,
-        PropertyAge:localStorage.getItem("PropertyAge") ,
-        PropertyApproved:localStorage.getItem("PropertyApproved") ,
-        Propertydescription:localStorage.getItem("Propertydescription") ,
-        BankLoan:localStorage.getItem("BankLoan") ,
-     },
-        Propertydetail:{
-            length: localStorage.getItem("length"),
-            Breadth: localStorage.getItem("Breadth"),
-            TotalArea:localStorage.getItem("propertyType"),
-            AreaUnit: localStorage.getItem("propertyType"),
-            NoofBHK: localStorage.getItem("propertyType"),
-            NoofFloor: localStorage.getItem("propertyType"),
-            Attached: localStorage.getItem("propertyType"),
-            WesternToilet: localStorage.getItem("propertyType"),
-            Furnished: localStorage.getItem("propertyType"),
-            CarParking: localStorage.getItem("propertyType"),
-            Lift: localStorage.getItem("propertyType"),
-            Electricity: localStorage.getItem("propertyType"),
-            Facing: localStorage.getItem("propertyType")
-        },
-       Generalinfo:{
-        Name:localStorage.getItem("Name") ,
-        Mobile:localStorage.getItem("Mobile") ,
-        Postedby:localStorage.getItem("Postedby"),
-        SelectType:localStorage.getItem("SelectType") ,
-        Featuredpackage:localStorage.getItem("Featuredpackage"), 
-        PPDPackage:localStorage.getItem("PPDPackage")
+        Mobile:localStorage.getItem("Mobile"),
+        TotalArea:localStorage.getItem("TotalArea") ,
+        PPDID:localStorage.getItem("PPDID"),
+        //token:localStorage.getItem("token")
+
+        // PropertyAge:localStorage.getItem("PropertyAge") ,
+        // PropertyApproved:localStorage.getItem("PropertyApproved") ,
+        // Propertydescription:localStorage.getItem("Propertydescription") ,
+        // BankLoan:localStorage.getItem("BankLoan") ,
+     }
+    //     Propertydetail:{
+    //         length: localStorage.getItem("length"),
+    //         Breadth: localStorage.getItem("Breadth"),
+    //         TotalArea:localStorage.getItem("TotalArea"),
+    //         AreaUnit: localStorage.getItem("AreaUnit"),
+    //         NoofBHK: localStorage.getItem("NoofBHK"),
+    //         NoofFloor: localStorage.getItem("NoofFloor"),
+    //         Attached: localStorage.getItem("Attached"),
+    //         WesternToilet: localStorage.getItem("WesternToilet"),
+    //         Furnished: localStorage.getItem("Furnished"),
+    //         CarParking: localStorage.getItem("CarParking"),
+    //         Lift: localStorage.getItem("Lift"),
+    //         Electricity: localStorage.getItem("Electricity"),
+    //         Facing: localStorage.getItem("Facing")
+    //     },
+    //    Generalinfo:{
+    //     Name:localStorage.getItem("Name") ,
+    //     Mobile:localStorage.getItem("Mobile") ,
+    //     Postedby:localStorage.getItem("Postedby"),
+    //     SelectType:localStorage.getItem("SelectType") ,
+    //     Featuredpackage:localStorage.getItem("Featuredpackage"), 
+    //     PPDPackage:localStorage.getItem("PPDPackage")
         
     
-        },
-         Locationinfo:{
-            Email:localStorage.getItem("Email"), 
-            City:localStorage.getItem("City"), 
-            Area:localStorage.getItem("Area"),
-            Pincode:localStorage.getItem("Pincode"),
-            Adresss:localStorage.getItem("Adresss"),
-            Landmark:localStorage.getItem("Landmark"),
-            Latitude:localStorage.getItem("Latitude"),
-            Longitude:localStorage.getItem("Longitude") 
-         },
+    //     },
+    //      Locationinfo:{
+    //         Email:localStorage.getItem("Email"), 
+    //         City:localStorage.getItem("City"), 
+    //         Area:localStorage.getItem("Area"),
+    //         Pincode:localStorage.getItem("Pincode"),
+    //         Adresss:localStorage.getItem("Adresss"),
+    //         Landmark:localStorage.getItem("Landmark"),
+    //         Latitude:localStorage.getItem("Latitude"),
+    //         Longitude:localStorage.getItem("Longitude") 
+    //      },
+    
 
-        }
+    }
         var localdata=allData;
     const postData =async ()=>{
     
+
+
+        await axios.post("http://localhost:8080/userData",localdata).then(localStorage.clear())
+        navigate("/Homepage")
+
+        // Info1()
+    }
+    // async function Info1(){
+    //     const Generalinfo = new FormData();
+    //     Generalinfo.append("propertyType", localStorage.getItem("propertyType"));
+    //     Generalinfo.append("Mobile", localStorage.getItem("Mobile"));
+    //     Generalinfo.append("TotalArea", localStorage.getItem("TotalArea"));
+    //     Generalinfo.append("SelectType", localStorage.getItem("SelectType"));
+    //     Generalinfo.append("Featuredpackage",localStorage.getItem("Featuredpackage")); 
+    //     Generalinfo.append("PPDPackage",localStorage.getItem("PPDPackage"));
+    //     Generalinfo.append("Image",file1);
+    //     try{
+    //         await axios.post("http://localhost:8080/Generalinfo",Generalinfo,
+    //     {
+//             headers: {
+//               "Content-Type": "multip art/form-data",
+//             }
+//         })
+        
+//         localStorage.clear()
+//         // navigate("/Homepage")
+//     //    Statuspost.current = false
+//     //     alert(Statuspost)
+//     //     console.log(Statuspost)
+        
 
         await axios.post("http://localhost:8080/userData",localdata)
     navigate("Frontend/RealEstate-frontend/src/Components/Homepage/Homepage.js", { replace: true });
@@ -95,21 +131,26 @@ function Locationinfo() {
     //     alert(Statuspost)
     //     console.log(Statuspost)
    
+
        
-    }
-    catch(e){
-        alert("Generalinfo not posted")
-    }
+//     }
+//     catch(e){
+//         alert("Generalinfo not posted")
+//     }
        
-}
+// }
 
 
   return (
       
+
+<div class="main-container" >
+
          
 <div class="main-container">
+
         <Staticpart />
-        <form>
+        <form onSubmit={postData} action="/Homepage" >
             <Nav />
             <Buttons/>
     <div className='Content'>

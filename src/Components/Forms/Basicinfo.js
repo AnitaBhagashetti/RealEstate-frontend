@@ -6,6 +6,11 @@ import Buttons from '../Buttons';
 import Nav from '../Homepage/Dyanamicpart/Nav';
 
 function Basicinfo() {
+    const date = new Date()
+    const PPDID ="PPDID" +date.getSeconds()+date.getHours() +date.getDay()
+    console.log(PPDID)
+    localStorage.setItem("PPDID",PPDID)
+    
   return (
 <div class="main-container">
         <Staticpart />    

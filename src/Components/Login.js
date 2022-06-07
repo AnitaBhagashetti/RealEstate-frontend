@@ -9,7 +9,6 @@ export default function Login() {
     })
     const navigate = useNavigate();
 
-
     function handleChange(e){
         setValues((prevstate)=>{
             return{
@@ -20,6 +19,32 @@ export default function Login() {
     }
 async function handleClick(e){
     e.preventDefault();
+
+    try {
+        console.log(values)
+        await axios.post('http://localhost:8080/login',{
+            userId:values.userId,
+            password:values.password
+          }).then((res)=>{
+              console.log(res)
+              if(res.data.status==="Success"){
+                let token = res.data.token;
+                localStorage.setItem("token", 'Bearer ' + token);
+                axios.defaults.headers.common['Authorization'] = 'Bearer ' + token;
+                alert("Logged in successfully")
+                navigate("/Homepage");
+              }
+              else{
+                  alert(res.data.status)
+              }
+          }
+          )
+        //   navigate('http://localhost:3000/Homepage',{ replace: true })
+    } catch (error) {
+        console.log(error)
+    }
+}
+
     
     try {
         console.log(values)
@@ -64,15 +89,22 @@ async function handleClick(e){
                 <Link to="/Register" className='sign-up-button'>Sign up</Link>
 
             </form>
-           
+
+
+            </form>
+
         </div>
         <div className='login-register'>
             <span className='login-span-text'>Don't have account? </span>
             <Link to="/Register" className='sign-up-button'>Sign up</Link>
+
+        </div>
+
         
 
         </div>
        
+
     </div>
   )
 }
